@@ -1,0 +1,81 @@
+---
+title: "`{epr}`"
+output:
+  github_document:
+    html_preview: true
+    toc: true
+    toc_depth: 2
+  html_document:
+    keep_md: yes
+always_allow_html: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- README.Rmd generates README.md. -->
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(
+  # collapse = TRUE,
+  fig.align = "center",
+  comment = "#>",
+  fig.path = "man/figures/",
+  message = FALSE,
+  warning = FALSE
+)
+options(width = 150)
+```
+
+
+<!-- badges: start -->
+[![R build status](https://github.com/knapply/epr/workflows/R-CMD-check/badge.svg)](https://github.com/knapply/epr/actions?workflow=R-CMD-check)
+[![GitHub last commit](https://img.shields.io/github/last-commit/knapply/epr.svg)](https://github.com/knapply/epr/commits/master)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Depends](https://img.shields.io/badge/Depends-GNU_R>=3.6-blue.svg)](https://www.r-project.org/)
+[![HitCount](http://hits.dwyl.io/knapply/epr.svg)](http://hits.dwyl.io/knapply/epr)
+<!-- [![Codecov test coverage](https://codecov.io/gh/knapply/epr/branch/master/graph/badge.svg)](https://codecov.io/gh/knapply/epr?branch=master) -->
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/epr)](https://cran.r-project.org/package=epr) -->
+<!-- badges: end -->
+
+# Introduction
+
+`{epr}` provides Ethnic Power Relations data and associated analytical routines.
+
+# Installation
+
+```{r, eval=FALSE}
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_github("knapply/epr")
+```
+
+
+# Usage
+
+```{r}
+library(epr)
+```
+
+```{r}
+epr_df
+
+epr_status_codes_df
+```
+
+```{r}
+library(data.table)
+options(datatable.print.trunc.cols = TRUE)
+
+merge(as.data.table(epr_df), epr_status_codes_df,
+      all.x = TRUE, by = "status")
+```
+
+```{r}
+library(dplyr)
+
+epr_df %>% 
+  left_join(epr_status_codes_df)
+```
+
+
+
+

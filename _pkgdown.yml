@@ -1,0 +1,13 @@
+destination: docs
+
+url: https://knapply.github.io/epr
+
+template:
+  params:
+    bootswatch: cerulean
+
+reference:
+    - title: EPR - Ethnic Power Relations Data
+      contents:
+      - epr_df
+      - epr_status_codes_df

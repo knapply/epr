@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README.Rmd$
+^data-raw$
+^man-roxygen$
+^docs$
+^_pkgdown.yml$
+^codecov\.yml$
+^pkgdown$
+^LICENSE\.md$
+^\.github$
+^playground$
+^_pkgdown\.yml$
